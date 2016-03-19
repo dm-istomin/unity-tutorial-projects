@@ -28,3 +28,6 @@ sysinfo.txt
 # Log files
 
 *.log
+
+# OS-specific files
+.DS_Store
