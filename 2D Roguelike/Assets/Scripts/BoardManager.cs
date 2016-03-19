@@ -34,7 +34,7 @@ public class BoardManager : MonoBehaviour {
 		gridPositions.Clear();
 		for (int x = 1; x < columns - 1; x++) {
 			for (int y = 1; y < rows - 1; y++) {
-				gridPositions.Add (new Vector3 (x, y 0f);
+				gridPositions.Add (new Vector3 (x, y 0f));
 			}
 		}
 	}
