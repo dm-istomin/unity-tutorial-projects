@@ -19,7 +19,7 @@ public class BoardManager : MonoBehaviour {
 	public int columns = 8;
 	public int rows = 8;
 	public Count wallCount = new Count(5, 9);
-	public Count foodCOunt = new Count(1, 5);
+	public Count foodCount = new Count(1, 5);
 	public GameObject exit;
 	public GameObject[] floorTiles;
 	public GameObject[] wallTiles;
@@ -34,7 +34,7 @@ public class BoardManager : MonoBehaviour {
 		gridPositions.Clear();
 		for (int x = 1; x < columns - 1; x++) {
 			for (int y = 1; y < rows - 1; y++) {
-				gridPositions.Add (new Vector3 (x, y 0f));
+				gridPositions.Add(new Vector3(x, y, 0f));
 			}
 		}
 	}
@@ -65,7 +65,7 @@ public class BoardManager : MonoBehaviour {
 
         for (int i = 0; i < objectCount; i++) {
             Vector3 randomPosition = RandomPosition();
-            GameObject tileChoice tileArray[Random.Range(0, tileArray.Length)];
+            GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
             Instantiate(tileChoice, randomPosition, Quaternion.identity);
         }
     }
@@ -77,7 +77,7 @@ public class BoardManager : MonoBehaviour {
         LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum);
         int enemyCount = (int) Mathf.Log(level, 2f);
         LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
-        Instantiate(exit, new Vector3(columns - 1, rows - 1, Quaternion.identity));
+        Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
 
     }
 }
